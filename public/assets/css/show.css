@@ -1,0 +1,129 @@
+@font-face {
+    font-family: IRANSans;
+    src: url('../fonts/IRANSans/IRANSansWeb_Light.woff'), url('../fonts/IRANSans/IRANSansWeb_Light.woff') format('truetype');
+    font-weight: normal;
+}
+
+* {
+    direction: rtl;
+    text-align: right;
+    font-family: IRANSans;
+}
+
+body {
+    background: #404E67;
+    color: #dcdcdc;
+    font-family: tahoma;
+}
+
+.vpn-card {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #475774;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    overflow: hidden;
+}
+
+.vpn-header {
+    background: #FE8A7D;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vpn-body {
+    padding: 25px;
+}
+
+.info-row {
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    padding: 18px 0;
+}
+
+.info-row:last-child {
+    border: none;
+}
+
+.info-title {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.info-value {
+    color: #dcdcdc;
+    font-size: 17px;
+    word-break: break-word;
+}
+
+.key-box {
+    background: #39465c;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 13px;
+    direction: ltr;
+    text-align: left;
+    overflow: auto;
+}
+
+.btn-outline-connect {
+    background: #FE8A7D;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 13px;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.btn-outline-connect:hover {
+    background: #ff7565;
+    color: #fff;
+}
+
+.status {
+    display: inline-block;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status-active {
+    background: #28a745;
+    color: #fff;
+}
+
+.status-expired {
+    background: #ffc107;
+    color: #000;
+}
+
+.status-limit {
+    background: #dc3545;
+    color: #fff;
+}
+
+.status-deleted {
+    background: #6c757d;
+    color: #fff;
+}
+
+@media(max-width:576px) {
+
+    .vpn-card {
+        margin: 15px;
+    }
+
+    .vpn-header {
+        font-size: 20px;
+    }
+
+    .info-value {
+        font-size: 15px;
+    }
+
+}
