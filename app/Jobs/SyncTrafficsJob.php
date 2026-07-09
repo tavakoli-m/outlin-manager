@@ -32,12 +32,16 @@ class SyncTrafficsJob implements ShouldQueue
         $active_access_keys = AccessKey::where('status', 'active')->get();
 
         foreach ($active_access_keys as $access_key) {
+
+            if((int)$access_keys_traffics[$access_key->key_id]){
             $access_key->update([
                 'used_traffic' => (int)$access_keys_traffics[$access_key->key_id]
             ]);
         }
 
         $this->checkAccessKeys($active_access_keys, $outlineService);
+            }
+            
     }
 
     private function checkAccessKeys($active_access_keys, $outlineService)
