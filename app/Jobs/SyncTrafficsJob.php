@@ -7,6 +7,7 @@ use App\Models\AccessKey;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class SyncTrafficsJob implements ShouldQueue
 {
@@ -33,16 +34,13 @@ class SyncTrafficsJob implements ShouldQueue
 
         foreach ($active_access_keys as $access_key) {
 
-            if($access_keys_traffics[$access_key->key_id]){
-            $access_key->update([
-                'used_traffic' => (int)$access_keys_traffics[$access_key->key_id]
-            ]);
-
-        }
-                        $this->checkAccessKeys($active_access_keys, $outlineService);
-
+            if (array_key_exists($access_key->key_id,$access_keys_traffics)) {
+                $access_key->update([
+                    'used_traffic' => (int)$access_keys_traffics[$access_key->key_id]
+                ]);
             }
-            
+            $this->checkAccessKeys($active_access_keys, $outlineService);
+        }
     }
 
     private function checkAccessKeys($active_access_keys, $outlineService)
