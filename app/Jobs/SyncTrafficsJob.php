@@ -37,9 +37,9 @@ class SyncTrafficsJob implements ShouldQueue
             $access_key->update([
                 'used_traffic' => (int)$access_keys_traffics[$access_key->key_id]
             ]);
-                        $this->checkAccessKeys($active_access_keys, $outlineService);
 
         }
+                        $this->checkAccessKeys($active_access_keys, $outlineService);
 
             }
             
