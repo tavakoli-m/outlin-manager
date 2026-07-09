@@ -33,7 +33,7 @@ class SyncTrafficsJob implements ShouldQueue
 
         foreach ($active_access_keys as $access_key) {
 
-            if((int)$access_keys_traffics[$access_key->key_id]){
+            if($access_keys_traffics[$access_key->key_id]){
             $access_key->update([
                 'used_traffic' => (int)$access_keys_traffics[$access_key->key_id]
             ]);
