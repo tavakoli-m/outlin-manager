@@ -119,7 +119,7 @@
                         <div class="key-box">
                             @if($access_key->key_secret)
 
-                            {{ $access_key->key_secret }}
+                            {{ $access_key->key_secret }}#Subscribe_{{ $access_key->public_id }}
 
                             @else
                             <div class="text-muted">
