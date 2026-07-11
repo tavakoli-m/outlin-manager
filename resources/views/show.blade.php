@@ -138,7 +138,7 @@
 
                     @if($access_key->key_secret)
 
-                    <a href="{{ $access_key->key_secret }}"
+                    <a href="{{ $access_key->key_secret }}#solo"
                         class="btn btn-block btn-outline-connect">
 
                         اتصال در Outline
